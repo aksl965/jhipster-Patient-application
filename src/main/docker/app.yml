@@ -1,0 +1,14 @@
+version: '2'
+services:
+  jhipstersamplepatient-app:
+    image: jhipstersamplepatient
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://jhipstersamplepatient-mysql:3306/jhipstersamplepatient?useUnicode=true&characterEncoding=utf8&useSSL=false
+      - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+  jhipstersamplepatient-mysql:
+    extends:
+      file: mysql.yml
+      service: jhipstersamplepatient-mysql

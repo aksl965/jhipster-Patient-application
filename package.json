@@ -1,0 +1,16 @@
+{
+  "name": "jhipster-sample-patient",
+  "version": "0.0.0",
+  "description": "Description for jhipsterSamplePatient",
+  "private": true,
+  "license": "UNLICENSED",
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "devDependencies": {
+    "generator-jhipster": "6.0.1"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  }
+}

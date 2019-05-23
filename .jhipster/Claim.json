@@ -1,0 +1,39 @@
+{
+    "name": "Claim",
+    "fields": [
+        {
+            "fieldName": "claimNo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "claimType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "claimAmount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "claimDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "patient",
+            "otherEntityName": "patient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190523121527",
+    "entityTableName": "claim",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "jhipsterSamplePatient",
+    "applications": "*",
+    "microserviceName": "jhipsterSamplePatient"
+}

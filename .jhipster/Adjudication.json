@@ -1,0 +1,49 @@
+{
+    "name": "Adjudication",
+    "fields": [
+        {
+            "fieldName": "casenumber",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "eob",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "enrollment",
+            "otherEntityRelationshipName": "adjudication",
+            "relationshipName": "amountEnrollment",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "patient",
+            "otherEntityRelationshipName": "adjudication",
+            "relationshipName": "amountPatient",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "claim",
+            "otherEntityRelationshipName": "adjudication",
+            "relationshipName": "amountClaim",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190523122353",
+    "entityTableName": "adjudication",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "jhipsterSamplePatient",
+    "applications": "*",
+    "microserviceName": "jhipsterSamplePatient"
+}

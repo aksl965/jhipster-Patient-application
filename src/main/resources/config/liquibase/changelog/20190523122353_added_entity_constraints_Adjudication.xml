@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Adjudication.
+    -->
+    <changeSet id="20190523122353-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="adjudication_id"
+                                 baseTableName="adjudication_amount_enrollment"
+                                 constraintName="fk_adjudication_amount_enrollment_adjudication_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adjudication"/>
+
+        <addForeignKeyConstraint baseColumnNames="amount_enrollment_id"
+                                 baseTableName="adjudication_amount_enrollment"
+                                 constraintName="fk_adjudication_amount_enrollment_amount_enrollment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="enrollment"/>
+        
+        <addForeignKeyConstraint baseColumnNames="adjudication_id"
+                                 baseTableName="adjudication_amount_patient"
+                                 constraintName="fk_adjudication_amount_patient_adjudication_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adjudication"/>
+
+        <addForeignKeyConstraint baseColumnNames="amount_patient_id"
+                                 baseTableName="adjudication_amount_patient"
+                                 constraintName="fk_adjudication_amount_patient_amount_patient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="patient"/>
+        
+        <addForeignKeyConstraint baseColumnNames="adjudication_id"
+                                 baseTableName="adjudication_amount_claim"
+                                 constraintName="fk_adjudication_amount_claim_adjudication_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="adjudication"/>
+
+        <addForeignKeyConstraint baseColumnNames="amount_claim_id"
+                                 baseTableName="adjudication_amount_claim"
+                                 constraintName="fk_adjudication_amount_claim_amount_claim_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="claim"/>
+        
+    </changeSet>
+</databaseChangeLog>
